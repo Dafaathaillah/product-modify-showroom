@@ -19,10 +19,10 @@
             @php $act = Session::get('menu'); @endphp
             <li class="{{ ( $act == 'home') ? 'active' : ''}}"><a href="{{url('home')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             <li class="{{ ( $act == 'banks') ? 'active' : ''}}"><a href="{{url('banks')}}"><em class="fa fa-bank">&nbsp;</em> Bank </a></li>
-            <li class="{{ ( $act == 'vendors') ? 'active' : ''}}"><a  href="{{url('vendors')}}"><em class="fa fa-industry">&nbsp;</em> Vendor car</a></li>
-            <li class="{{ ( $act == 'cars') ? 'active' : ''}}"><a href="{{url('cars')}}"><em class="fa fa-car">&nbsp;</em> Car </a></li>
+            <li class="{{ ( $act == 'categories') ? 'active' : ''}}"><a  href="{{url('categories')}}"><em class="fa fa-shopping-basket">&nbsp;</em> Categorie Product</a></li>
+            <li class="{{ ( $act == 'products') ? 'active' : ''}}"><a href="{{url('products')}}"><em class="fa fa-shopping-bag">&nbsp;</em> Product </a></li>
             <li class="{{ ( $act == 'transactions') ? 'active' : ''}}"><a href="{{url('transactions')}}"><em class="fa fa-exchange">&nbsp;</em> Order</a></li>
-            <li class="{{ ( $act == 'return') ? 'active' : ''}}"><a href="{{url('transaction_return')}}"><em class="fa fa-undo">&nbsp;</em> Out Car</a></li>
+            <li class="{{ ( $act == 'return') ? 'active' : ''}}"><a href="{{url('transaction_return')}}"><em class="fa fa-undo">&nbsp;</em> Out Product</a></li>
            
             <li class="parent {{ ( $act == 'user_admin') ? 'active' : ''}}">
                 <a data-toggle="collapse" href="#sub-item-1">
@@ -30,7 +30,7 @@
                 </a>
                 <ul class="children collapse" id="sub-item-1">
                     <li><a class="{{ ( $act == 'user_admin') ? 'active' : ''}}" href="{{url('users')}}">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Dealer 
+                        <span class="fa fa-arrow-right">&nbsp;</span> Admin 
                     </a></li>
                     <li><a class="{{ ( $act == 'user_customer') ? 'active' : ''}}" href="{{url('customers')}}">
                         <span class="fa fa-arrow-right">&nbsp;</span> Customer 

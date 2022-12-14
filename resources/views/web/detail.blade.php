@@ -8,8 +8,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>{{strtoupper($car->name_car)}}</h4>
-              <h2>{{strtoupper($car->model)}}</h2>
+              <h4>{{strtoupper($product->name_product)}}</h4>
+              {{-- <h2>{{strtoupper($product->model)}}</h2> --}}
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
           <div class="col-md-6">
             <div>
               <br>
-              <img src="{{$car->img_car}}" alt="" class="img-fluid wc-image">
+              <img src="{{$product->img_product}}" alt="" class="img-fluid wc-image">
             </div>
             <br>
           </div>
@@ -34,89 +34,96 @@
                     <div class="clearfix">
                          <span class="pull-left">Type</span>
 
-                         <strong class="pull-right">{{strtoupper($car->type_car)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->type_product)}}</strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Vendor</span>
+                         <span class="pull-left">Categorie</span>
 
-                         <strong class="pull-right">{{strtoupper($car->vendor->name_vendor)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->vendor->name_categorie)}}</strong>
                     </div>
                </li>
-
+{{-- 
                <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left"> Model</span>
 
-                         <strong class="pull-right">{{strtoupper($car->model)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->model)}}</strong>
                     </div>
-               </li>
+               </li> --}}
 
-               <li class="list-group-item">
+               {{-- <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">First registration</span>
 
-                         <strong class="pull-right">{{strtoupper($car->fisrt_registartion)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->fisrt_registartion)}}</strong>
                     </div>
-               </li>
+               </li> --}}
 
-               <li class="list-group-item">
+               {{-- <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Mileage</span>
 
-                         <strong class="pull-right">{{strtoupper($car->millage)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->millage)}}</strong>
                     </div>
-               </li>
-
+               </li> --}}
+{{-- 
                <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Fuel</span>
 
-                         <strong class="pull-right">{{strtoupper($car->fuel)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->fuel)}}</strong>
                     </div>
-               </li>
+               </li> --}}
 
-               <li class="list-group-item">
+               {{-- <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Engine size</span>
 
-                         <strong class="pull-right">{{strtoupper($car->engine_size)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->engine_size)}}</strong>
                     </div>
-               </li>
-
+               </li> --}}
+{{-- 
                <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Power</span>
 
-                         <strong class="pull-right">{{strtoupper($car->power)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->power)}}</strong>
                     </div>
-               </li>
+               </li> --}}
 
-               <li class="list-group-item">
+               {{-- <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Number of seats</span>
 
-                         <strong class="pull-right">{{strtoupper($car->seats)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->seats)}}</strong>
                     </div>
-               </li>
+               </li> --}}
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Doors</span>
+                         <span class="pull-left">Desc</span>
 
-                         <strong class="pull-right">{{strtoupper($car->doors)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->desc)}}</strong>
                     </div>
                </li>
+               <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Price</span>
 
+                     <strong class="pull-right">{{number_format($product->day_price)}}</strong>
+                </div>
+           </li>
+{{-- 
                <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Color</span>
 
-                         <strong class="pull-right">{{strtoupper($car->color)}}</strong>
+                         <strong class="pull-right">{{strtoupper($product->color)}}</strong>
                     </div>
-               </li>
+               </li> --}}
               </ul>
             </form>
           </div>
@@ -126,7 +133,7 @@
  @php $modelT = new App\Models\User(); @endphp
  @php $check = $modelT->get_contact_details(); @endphp
 @php $bank = $modelT->get_bank(); @endphp
-@php $cek_pay = $modelT->cek_pay($car->id); @endphp
+@php $cek_pay = $modelT->cek_pay($product->id); @endphp
     <div class="section">
       <div class="container">
         <div class="row">
@@ -214,14 +221,14 @@
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
-                             <p>Car : {{$car->name_car}}</p>
+                             <p>Product : {{$product->name_product}}</p>
                           </fieldset>
                        </div>
 
                        <div class="col-md-6">
                           <fieldset>
                            
-                           <p>Price : {{number_format($car->day_price)}}</p>
+                           <p>Price : {{number_format($product->day_price)}}</p>
                           
                           </fieldset>
                        </div>
@@ -230,13 +237,13 @@
                   @foreach($bank as $b)
                   <p>Bank / An / Number : {{$b->name_bank}} / {{$b->an}} / {{$b->no_rek}}</p>
                   @endforeach
-              <input type="hidden" name="car_id" value="{{$car->id}}">
-              <input type="hidden" name="amount" value="{{$car->day_price}}">
+              <input type="hidden" name="product_id" value="{{$product->id}}">
+              <input type="hidden" name="amount" value="{{$product->day_price}}">
            </div>
           </div>
           <div class="modal-footer">
             @if($cek_pay==1)
-             <p align="center">You Have Benn Book This Car!</p>
+             <p align="center">You Have Benn Book This product!</p>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
             @else
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

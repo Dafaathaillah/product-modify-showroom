@@ -83,7 +83,7 @@ class TransactionController extends Controller
         $Transactions = new Transaction;
         $Transactions->code_transaction = strtoupper(Str::random(10));
         $Transactions->user_id = Auth::user()->id;
-        $Transactions->car_id = $request->car_id;
+        $Transactions->product_id = $request->product_id;
         $Transactions->transaction_date = Carbon::now()->format('Y-m-d');
         $Transactions->amount = $request->amount;
         $Transactions->status_transaction ='process';

@@ -30,9 +30,9 @@
                 </div>
                 <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
                     <div class="panel panel-blue panel-widget border-right">
-                        <div class="row no-padding"><em class="fa fa-xl fa-car color-red"></em>
+                        <div class="row no-padding"><em class="fa fa-xl fa-shopping-bag color-red"></em>
                             <div class="large">{{$transaction}}</div>
-                            <div class="text-muted">Total Out Car</div>
+                            <div class="text-muted">Total Out Product</div>
                         </div>
                     </div>
                 </div>

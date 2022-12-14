@@ -8,13 +8,13 @@
                 <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-                <li class="active">Vendors</li>
+                <li class="active">Categories</li>
             </ol>
         </div><!--/.row-->
        
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List Vendors</h1>
+                <h1 class="page-header">List Categorie</h1>
             </div>
         </div><!--/.row-->
 
@@ -27,7 +27,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                          <p align="left"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddVendors">
-                          Add Vendors
+                          Add Categorie
                         </button></p>
                     </div>
                     <div class="panel-body">
@@ -37,16 +37,16 @@
                                 <thead>
                                     <tr>
                                         <th >No</th>
-                                        <th >Name Of Vendor</th>
+                                        <th >Name Of Categorie</th>
                                         <th >Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @php $no = 1; @endphp
-                                @foreach($vendors as $vendor)
+                                @foreach($categories as $vendor)
                                 <tr>
                                     <td>{{$no}}</td>
-                                    <td>{{$vendor->name_vendor}}</td>
+                                    <td>{{$vendor->name_categorie}}</td>
                                     <td>
                                                     <button 
                                                         class="btn btn-info btn-sm" 
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div><!-- /.panel-->
-    </div>  <!--/.main-->
+    </div>  <!--/.main-->AddVendors
 
      <!-- The Modal -->
   <div class="modal" id="AddVendors">
@@ -80,16 +80,16 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Add New Vendor</h4>
+          <h4 class="modal-title">Add New Categorie</h4>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-            <form role="form" action="{{url('vendor_add')}}" method="POST">
+            <form role="form" action="{{url('categorie_add')}}" method="POST">
                 @csrf
         <div class="form-group">
-            <label>Vendor Name</label>
-            <input class="form-control" name="name_vendor" placeholder="Vendor Name">
+            <label>Categorie Name</label>
+            <input class="form-control" name="name_categorie" placeholder="Categorie Name">
         </div>
     
         </div>
@@ -104,24 +104,24 @@
     </div>
   </div>
 
-   @foreach($vendors as $vd)
+   @foreach($categories as $vd)
    <div class="modal" id="EditVendor-{{$vd->id}}">
     <div class="modal-dialog">
       <div class="modal-content">
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Edit Vendor</h4>
+          <h4 class="modal-title">Edit Categorie</h4>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-            <form role="form" action="{{url('vendor_update/'.$vd->id)}}" method="POST">
+            <form role="form" action="{{url('categorie_update/'.$vd->id)}}" method="POST">
                 @csrf
         <div class="form-group">
-            <label>Vendor Name</label>
-            <input class="form-control" value="{{$vd->name_vendor}}"
-            name="name_vendor" placeholder="Vendor Name">
+            <label>Categorie Name</label>
+            <input class="form-control" value="{{$vd->name_categorie}}"
+            name="name_categorie" placeholder="Categorie Name">
         </div>
         </div>
         
@@ -141,7 +141,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Delete Vendor</h4>
+          <h4 class="modal-title">Delete Categorie</h4>
           
         </div>
         
@@ -152,7 +152,7 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
-         <a href="{{url('vendor_delete/'.$vd->id)}}" class="btn btn-info">Yes</a>
+         <a href="{{url('categorie_delete/'.$vd->id)}}" class="btn btn-info">Yes</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>

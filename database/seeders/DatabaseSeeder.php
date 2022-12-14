@@ -23,20 +23,20 @@ class DatabaseSeeder extends Seeder
             ,'phone_number'=>'085608014111'
             ]
       );
-     //vendors
-     DB::table('vendors')->insert(
+     //categorie
+     DB::table('categories')->insert(
             [
-            'name_vendor'=>'Honda'
+            'name_categorie'=>'Plastik'
         ]
       );
-     DB::table('vendors')->insert(
+     DB::table('categories')->insert(
             [
-            'name_vendor'=>'Toyota'
+            'name_categorie'=>'Kayu'
         ]
       );
-     DB::table('vendors')->insert(
+     DB::table('categories')->insert(
             [
-            'name_vendor'=>'Daihatsu'
+            'name_categorie'=>'Baja'
         ]
       );
      //bank

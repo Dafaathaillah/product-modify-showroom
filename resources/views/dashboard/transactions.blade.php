@@ -36,7 +36,7 @@
                                         <th >No</th>
                                         <th>Code Transaction</th>
                                         <th>Name Of Customers</th>
-                                        <th>Name Of Car</th>
+                                        <th>Name Of Product</th>
                                         <th>Amount</th>
                                         <th>Order date</th>
                                         <th>Status</th>
@@ -50,7 +50,7 @@
                                     <td>{{$no}}</td>
                                     <td>{{$car->code_transaction}}</td>
                                     <td>{{$car->user->name}}</td>
-                                    <td>{{$car->car->name_car}}</td>
+                                    <td>{{$car->car->name_product}}</td>
                                     <td>{{number_format($car->amount)}}</td>
                                     <td>{{$car->transaction_date}}</td>
                                     <td>

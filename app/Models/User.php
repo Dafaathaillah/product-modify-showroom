@@ -89,7 +89,7 @@ class User extends Authenticatable
         if(Auth::check())
         {
             $data = 
-            DB::table('transactions')->where('car_id',$id)->where('user_id',Auth::user()->id)->first();
+            DB::table('transactions')->where('product_id',$id)->where('user_id',Auth::user()->id)->first();
                 if($data)
                 {
                     return 1;
@@ -108,7 +108,7 @@ class User extends Authenticatable
     {
 
         $data = DB::table('transactions')
-                ->where('car_id',$id)
+                ->where('product_id',$id)
                 ->first();
         return $data;
 

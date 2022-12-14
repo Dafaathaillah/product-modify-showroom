@@ -32,8 +32,8 @@ class HomeController extends Controller
             $transaction = DB::table('transactions')->where('status_transaction','agree')->count();
             $customer = DB::table('users')->where('role','customer')->count();
             $admin = DB::table('users')->where('role','admin')->count();
-            $vendor = DB::table('vendors')->count();
-            $car = Db::table('cars')->count();
+            $vendor = DB::table('categories')->count();
+            $car = Db::table('products')->count();
             //$return_car = DB::table('transactions')->where('status_car','done')->count();
             //$leased = DB::table('transactions')->where('status_car','leased')->count();
             return view('dashboard.home',compact('order','transaction','customer','admin','vendor','car'));

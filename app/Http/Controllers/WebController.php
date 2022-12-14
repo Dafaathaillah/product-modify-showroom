@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Product;
 use App\Models\User;
 use Session;
 use DB;
@@ -28,8 +29,8 @@ class WebController extends Controller
 
     public function index()
     {
-        $cars = Car::with('vendor')->paginate(4);
-        return view('web.index',compact('cars'));
+        $products = Product::with('vendor')->paginate(4);
+        return view('web.index',compact('products'));
         //return $cars;
     }
 
@@ -52,8 +53,8 @@ class WebController extends Controller
 
     public function detailCar($id)
     {
-        $car = Car::find($id);
-        return view('web.detail',compact('car'));
+        $product = Product::find($id);
+        return view('web.detail',compact('product'));
     }
 
 }

@@ -10,7 +10,7 @@
           <div class="col-md-12">
             <div class="text-content">
               <h4>WELCOME </h4>
-              <h2>SHOW ROOM CAR</h2>
+              <h2>PRODUCT</h2>
             </div>
           </div>
         </div>
@@ -22,11 +22,11 @@
           <div class="col-md-12">
             <div class="row">
               @php $modelT = new App\Models\User(); @endphp
-              @foreach($cars as $car)
+              @foreach($products as $car)
               @php $data = $modelT->cek_booked($car->id); @endphp
               <div class="col-md-6">
                 <div class="product-item">
-                <img src="{{$car->img_car}}" alt="">
+                <img src="{{$car->img_product}}" alt="">
                   {{-- <div class="down-content">
                     <a href="{{url('web/car-details.html')}}"><h4>{{$car->name_car}}</h4></a>
 
@@ -46,17 +46,17 @@
                   @elseif($data->status_transaction=='agree')
                     <p align="right"><a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Sold">Sold</a></p>
                   @else
-                   <p align="right"><a href="{{url('car_detail/'.$car->id)}}" class="btn btn-info btn-sm">Detail</a></p>
+                   <p align="right"><a href="{{url('product_detail/'.$car->id)}}" class="btn btn-info btn-sm">Detail</a></p>
                   @endif
                   @else
-                   <p align="right"><a href="{{url('car_detail/'.$car->id)}}" class="btn btn-info btn-sm">Detail</a></p>
+                   <p align="right"><a href="{{url('product_detail/'.$car->id)}}" class="btn btn-info btn-sm">Detail</a></p>
                   @endif
                 </div>
               </div>
               @endforeach
               <div class="col-md-12">
                 <ul class="pages">
-                 {{$cars->links()}}
+                 {{$products->links()}}
                 </ul>
               </div>
             </div>
@@ -75,7 +75,7 @@
           </div>
           <div class="modal-body">
             <div class="contact-form">
-             <p>This car have been booked , and wil bee ready again if the booked before not pay the invoice !</p>
+             <p>This Product have been booked , and wil bee ready again if the booked before not pay the invoice !</p>
           <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
           </div>
@@ -89,14 +89,14 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">This car have been sold</h5>
+            <h5 class="modal-title" id="exampleModalLabel">This Product have been sold</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="contact-form">
-             <p>This car have been sold</p>
+             <p>This Product have been sold</p>
           <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
           </div>

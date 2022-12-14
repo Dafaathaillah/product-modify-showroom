@@ -107,7 +107,7 @@
 						<table>
 							<tr>
 								<td class="title">
-									CAR SHOW ROOM 
+									PRODUCT 
 								</td>
 
 								<td>
@@ -144,7 +144,7 @@
 				</tr>
 
 				<tr class="details">
-					<td>Check</td>
+					<td>Transfer</td>
 
 					<td>{{number_format($data->amount)}}</td>
 				</tr>
@@ -156,7 +156,7 @@
 				</tr>
 
 				<tr class="item">
-					<td>Car {{$data->car->name_car}}</td>
+					<td>Product {{$data->car->name_product}}</td>
 
 					<td>{{number_format($data->car->day_price)}}</td>
 				</tr>
